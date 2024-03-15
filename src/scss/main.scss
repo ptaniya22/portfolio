@@ -1,0 +1,68 @@
+@import url(./fonts.scss);
+
+:root {
+  --background: rgb(15 23 42);
+  --color: rgb(148 163 184);
+  --hover-title-color: rgb(94 234 212);
+  --skills-area-color: rgb(19 78 74);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "inter";
+  font-weight: 400;
+  background: var(--background);
+  color: var(--color);
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.box {
+  padding: 96px 96px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  text-align: left;
+}
+
+.header {
+  width: 50%;
+  position: sticky;
+  top: 96px;
+
+  h1 {
+    font-weight: 700;
+    font-size: 48px;
+    color: #e2e8f0;
+    margin-bottom: 20px;
+  }
+}
+.main {
+  display: block;
+  width: 50%;
+}
+
+.main_item {
+  max-width: 528px;
+  background: lightblue;
+  height: 90vh;
+
+  word-wrap: break-word;
+}
