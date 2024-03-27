@@ -109,13 +109,27 @@ ul {
   // }
 }
 .main {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
   width: 50%;
-  &_item {
+  &__item {
     max-width: 528px;
-    background: lightblue;
+    // background: lightblue;
     height: 90vh;
     word-wrap: break-word;
+
+    &_about {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      line-height: 24px;
+      font-size: 20px;
+      & span {
+        color: #e2e8f0;
+        font-weight: 500;
+      }
+    }
   }
 }
 .active {
@@ -123,10 +137,12 @@ ul {
     &_text {
       font-size: 24px;
       color: #e2e8f0;
+      transition: all 0.15s;
     }
     &_indicator {
       background-color: #e2e8f0;
       width: 4rem;
+      transition: all 0.15s;
     }
   }
 }

@@ -1,10 +1,52 @@
+import { useState } from 'react';
 import React from 'react'
-import { Element } from 'react-scroll'
-import { Link } from 'react-router-dom'
+import { Element, Link } from 'react-scroll'
+ import { Link as LinkRouter } from 'react-router-dom'
 
 
-const About = () => {
+const list = [
+      { title: 'About me', anchor: 'about' },
+      { title: 'Projects', anchor: 'projects' },
+      { title: 'Skills', anchor: 'skills' },
+      { title: 'contacts', anchor: 'contacts' },
+    // { title: 'other', anchor: 'other' }
+
+    
+
+]
+
+
+
+const Portfolio = () => {
   return (
+    <>
+     <header className='header'>
+          <h1 className='header_title'>Musiyachenko <br />Tatyana</h1>
+          <h2>Junior Frontend Engineer</h2>
+          <nav className="header_nav">
+        
+                {/* <div className="header_nav__box"> */}
+                    
+                    <ul className="header_nav__list">
+                        { list.map(item => (
+                            <li  key={item.title}>
+                                <Link to={item.anchor}  activeClass="active" offset={-97} spy={true} hashSpy={true} smooth={true} duration={500}
+                                    // onClick={handleClick}
+                                    // onClick={handleClick} className={click ? "header_nav__link active" : "header_nav__link"}>
+                                     className="header_nav__link" >
+                                    <span className="header_nav__link_indicator" ></span>
+                                    <span className="header_nav__link_text">{item.title}</span>
+                                    
+                                </Link>
+                            </li>
+                        )) }
+                    </ul>
+            
+                {/* </div> */}
+             </nav>
+
+    </header>
+      
     <section className='main'>
       <Element name="about" >       
            <div className="main__item_about">
@@ -19,17 +61,16 @@ const About = () => {
       <Element name="projects" >       
          <div className="main__item"><h2>My projects</h2>
           <p>This is the content of section projects *******************************************************************************************</p>
-          <Link to={`/portfolio/projects/`}>see more</Link>
+          <LinkRouter to={`/projects`}>see more</LinkRouter>
 
         </div>         
       </Element>
 
-      <Element name="skills" >       
+      <Element name="skills" >  
            <div className="main__item"><h2>Skills</h2>
           <p>This is the content of section Skills *******************************************************************************************</p>
         </div> 
       </Element>
-    
      
 
       <Element name="contacts" >       
@@ -40,8 +81,9 @@ const About = () => {
       
         
       
-    </section>
+      </section>
+    </>
   )
 }
 
-export default About
+export default Portfolio
